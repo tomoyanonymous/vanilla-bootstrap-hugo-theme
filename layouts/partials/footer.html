@@ -1,7 +1,57 @@
 {{ if ne .Site.Params.hideFooter true }}
-<footer id="footer" class="mt-auto text-center text-muted">
+
+<footer id="footer" class="mt-auto text-muted" >
   <div class="container">
-    {{ .Site.Params.footerText | markdownify }}
+    <ul class="nav">
+      {{ $showActiveNav := $.Site.Params.showActiveNav }}
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.nav }}
+        {{ $active := "" }}
+        {{ if eq $showActiveNav true }}
+          {{ $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) }}
+          {{ $isMenu = or $isMenu (eq $currentPage.Title .Name) }}
+          {{ $isMenu = or $isMenu (and (eq .Name "Blog") (eq $currentPage.Section "post")) }}
+          {{ $isMenu = or $isMenu (and (eq .Name "Tags") (eq $currentPage.Section "tags")) }}
+          {{ if $isMenu }}
+            {{ $active = "active" }}
+          {{ end }}
+        {{ end }}
+        <li class="nav-item {{$active}}">
+              <a class="nav-link" href="{{.URL|absLangURL}}">{{.Name}}</a>
+            </li>
+      {{end}}
+
+      <li class="nav-item dropdown ml-auto">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Languages</a>
+        <div class="dropdown-menu">
+          {{range $i,$2 := .Translations}}
+          {{if $i}}
+          <div class="dropdown-divider"></div>
+          {{end}}
+          <a class="dropdown-item" href="{{.Permalink}}">{{.Language.LanguageName}}</a>
+          {{end}}
+        </div>
+      </li>
+</ul>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="{{"/contact"|absLangURL}}">お問い合わせ</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{"/faq"|absLangURL}}">よくある質問（FAQ）</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/{{.Site.Params.twitter}}" target="_blank">Twitter</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://facebook.com/{{.Site.Params.facebook}}" target="_blank">Facebook</a>
+  </li>
+</ul>
+<ul class="nav">
+    <li class="nav-item">
+    <a class="nav-link disabled" href="#">{{ .Site.Params.footerText | markdownify }}
+    </li>
+    </ul>
   </div>
 </footer>
 {{ end }}
