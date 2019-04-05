@@ -3,7 +3,9 @@
 <html lang="{{ $lang }}" class="h-100">
   {{ partial "head.html" . }}
   <body class="d-flex flex-column h-100">
+    {{ block "header" . }}
     {{ partial "nav.html" . }}
+    {{ end }}
     <div class="container">
       <main id="main">
         {{ block "main" . }}{{ end }}
