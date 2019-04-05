@@ -20,7 +20,7 @@
 			{{ with $.Page.Resources.GetMatch (printf "**%s*" .include)  }}
 				{{ if ne .ResourceType "page" }}
 				{{/* Assume it is a file that needs code highlighting. */}}
-				{{ $codelang := $e.codelang | default ( path.Ext .Name | strings.TrimPrefix ".") }} 
+				{{ $codelang := $e.codelang | default ( path.Ext .Name | strings.TrimPrefix ".") }}
 				{{ highlight .Content $codelang "" }}
 				{{ else}}
 					{{ .Content }}
@@ -31,7 +31,7 @@
 		{{ $page := site.GetPage "page" $path }}
 		{{ with $page }}
 			{{ .Content }}
-		{{ else }}	
+		{{ else }}
 		{{ errorf "[%s] tabs include not found for path %q" site.Language.Lang $path}}
 		{{ end }}
 		{{ end }}
@@ -41,4 +41,3 @@
 </div>
 {{ $elem :=  $tab_set_id | safeJS }}
 <script>$(function(){$("#{{ $elem }}").tabs();});</script>
-
