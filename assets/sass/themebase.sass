@@ -2,19 +2,51 @@
 @import 'ui'
 //font
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600')
+$textcolor: #444444
+$buttonblack: #2A2A2A
+$linkblue: #03A9F4
+
+
 body
   font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3,
   "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN",
   "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic","Open Sans", "メイリオ", Meiryo, sans-serif
+  font-size: 16px
+  letter-spacing: 1.5px
+  line-height: 26px
+  color: $textcolor
+a
+  color: $linkblue
 
-#main h1,#main h2
+#main
+  max-width: 720px
+  padding: 10px
+  margin: auto
+  font-weight: 200
+#main
+  h1,h2,h3,h4,h5
+
+#main h2,#main h3
   text-align: center
-#main h1
+h1
   font-weight: 600
-  font-size: 22pt
-  letter-spacing: 0.7rem
-#main h2
+  font-size: 64px
+  letter-spacing: 5px
+  font-family: 'Avenir Next', 'Open Sans', sans-serif
+  line-height: 68px
+h2
   font-weight: 400
+  font-size: 28px
+  letter-spacing: 5px
+  margin: 50px 0
+h3
+  font-weight: 600
+  font-size: 20px
+  margin: 30px 0
+  letter-spacing: 1.5px
+h4
+  font-size: 18px
+  letter-spacing: 1.5px
 
 a.titlelogo p
   margin-bottom: 0
@@ -23,34 +55,46 @@ a.titlelogo p
   letter-spacing: 0.1rem
   font-size: 1.3rem
   font-family: 'Avenir Next', 'Open Sans', sans-serif
-
 nav.navbar
   height: 125px
   padding: 0
+.navbar-collapse
+  background-color: #fff
+nav.navbar .navbar-nav
+  display: flex
+  justify-content: space-between
+  max-width: 650px
+  width: 100%
+  padding-left: 15px
 
 nav.navbar .navbar-nav .nav-item
   height: 45px
   text-align: center
   letter-spacing: 0.1rem
   display: flex
+  padding: 0
 nav.navbar .navbar-nav .nav-item .nav-link
-  padding: 0 20px
+  padding: 0
   margin: auto
 
-
 nav.navbar .navbar-nav .ticket
-  background-color: #000
+  background-color: $buttonblack
   color: #fff
-  border-radius: 5px
-  width: 145px
+  border-radius: 4px
+  width: 140px
   height: 45px
   margin-left: 20px
 
-
 .navbar-light .navbar-nav .ticket>.nav-link
   color: #fff
-  font-weight: 200
-  letter-spacing: 0.2rem
+
+nav.navbar .navbar-nav .ticket:hover
+  background-color: #fff
+  border: solid 1px $buttonblack
+
+nav.navbar .navbar-nav .ticket:hover>.nav-link
+    color: $buttonblack
+
 
 footer .nav
   font-weight: 300
@@ -68,9 +112,7 @@ footer #langbutton .nav-link
   margin-left: auto
   margin-right: 0
 footer #footer2
-  font-size: 9.5pt
-  letter-spacing: 0.05rem
+  font-size: 14px
+  letter-spacing: 1.5px
 
 footer #footer3
-  font-size: 9.5pt
-  letter-spacing: 0.1rem

@@ -1,17 +1,13 @@
-{{ define "head" }}
+{{ define "header" }}
  {{ partial "nav_toppage.html" .}}
 {{end}}
 
 {{ define "main" }}
 
-<div id="home-jumbotron" class="jumbotron text-center">
-{{ with .Content }}
-  <h1>{{ $.Page.Title }}</h1>
-  {{ . }}
-{{ else }}
-  <h1>{{ .Site.Title }}</h1>
-  <p class="font-125">{{ .Site.Params.homeText | markdownify }}</p>
-{{ end }}
+<div id="home-jumbotron" class= "mx-auto">
+  <h1>Max</h1>
+  <h1>Summer School</h1>
+  <h1>in Geidai 2019</h1>
 </div>
 
 {{ end }}

@@ -1,8 +1,11 @@
-<div id="nav-border" class="container">
-{{partial "menu.html" .}}
-<div class="nav justify-content-center">
-  <a class="nav-link active" href="/ticket">
-    {{$.Site.Params.ticketLabel}}
-  </a>
-</div>
-</div>
+<div class="container">
+  <nav class="navbar navbar-expand-md navbar-light bg-light" style="background-color: #ffffff!important;">
+    <a href="{{.Site.BaseURL | absLangURL}}" class="navbar-brand titlelogo disabled">
+
+    </a>
+
+  {{partial "menu.html" .}}
+   </nav>
+
+
+  </div>
