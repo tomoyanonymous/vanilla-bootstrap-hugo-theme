@@ -2,7 +2,7 @@
 
 <footer id="footer" class="mt-auto text-muted" >
   <div class="container">
-    <ul class="nav">
+    <ul class="nav" id="footer1">
       {{ $showActiveNav := $.Site.Params.showActiveNav }}
       {{ $currentPage := . }}
       {{ range .Site.Menus.nav }}
@@ -21,8 +21,8 @@
             </li>
       {{end}}
 
-      <li class="nav-item dropdown ml-auto">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Languages</a>
+      <li class="nav-item dropdown ml-auto" id="langbutton">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
         <div class="dropdown-menu">
           {{range $i,$2 := .Translations}}
           {{if $i}}
@@ -33,12 +33,12 @@
         </div>
       </li>
 </ul>
-<ul class="nav">
+<ul class="nav" id="footer2">
   <li class="nav-item">
     <a class="nav-link" href="{{"/contact"|absLangURL}}">お問い合わせ</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{"/faq"|absLangURL}}">よくある質問（FAQ）</a>
+    <a class="nav-link" href="{{"/faq"|absLangURL}}">よくある質問(FAQ)</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="https://twitter.com/{{.Site.Params.twitter}}" target="_blank">Twitter</a>
@@ -47,7 +47,7 @@
     <a class="nav-link" href="https://facebook.com/{{.Site.Params.facebook}}" target="_blank">Facebook</a>
   </li>
 </ul>
-<ul class="nav">
+<ul class="nav" id="footer3">
     <li class="nav-item">
     <a class="nav-link disabled" href="#">{{ .Site.Params.footerText | markdownify }}
     </li>
