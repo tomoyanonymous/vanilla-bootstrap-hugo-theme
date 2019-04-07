@@ -1,10 +1,10 @@
 {{$address := .Get "address"}}
 
 <div class="mailform">
-<form action="https://formspree.io/={{$address}}" method="POST">
+<form action="https://formspree.io/{{$address}}" method="POST">
   <input type="text" name="name" placeholder="名前" required>
   <input type="email" name="_replyto" placeholder="メールアドレス">
   <textarea name="message" placeholder="内容"></textarea>
-  <button type="submit">Send</button>
+  <button type="submit">送信</button>
 </form>
 </div>
