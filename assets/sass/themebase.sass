@@ -1,11 +1,11 @@
 @import 'original'
 @import 'ui'
+@import 'sp'
 //font
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600')
 $textcolor: #444444
 $buttonblack: #2A2A2A
 $linkblue: #03A9F4
-
 
 body
   font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3,
@@ -14,6 +14,11 @@ body
   font-size: 16px
   letter-spacing: 1.5px
   line-height: 26px
+  word-wrap: break-word
+  @include max-screen($breakpoint-md)
+      font-size: 28px
+      letter-spacing: 1.5px
+      line-height: 38px
   color: $textcolor
   box-sizing: border-box
 #main a
@@ -32,23 +37,34 @@ body
   text-align: center
 h1
   font-weight: 600
-  font-size: 64px
-  letter-spacing: 5px
   font-family: 'Avenir Next', 'Open Sans', sans-serif
+  font-size: 64px
+  letter-spacing: 0.12px
   line-height: 68px
+  @include max-screen($breakpoint-md)
+    font-size: 80px
+    letter-spacing: 0.12px
+    line-height: 68px
 h2
   font-weight: 400
   font-size: 28px
   letter-spacing: 5px
+  @include max-screen($breakpoint-md)
+    font-size: 38px
   margin: 50px 0
 h3
   font-weight: 600
   font-size: 20px
-  margin: 30px 0
   letter-spacing: 1.5px
+  @include max-screen($breakpoint-md)
+    font-size: 30px
+  margin: 30px 0
+
 h4
   font-size: 18px
   letter-spacing: 1.5px
+  @include max-screen($breakpoint-md)
+    font-size: 26px
 #main figure
   max-height: 320px
   padding: 10px
@@ -81,14 +97,17 @@ a.titlelogo p
   margin-bottom: 0
   line-height: 1.2em
   font-weight: 600
-  letter-spacing: 0.1rem
-  font-size: 1.3rem
+  letter-spacing: 1.5px
+  font-size: 16px
+  @include max-screen($breakpoint-md)
+    font-size: 28px
   font-family: 'Avenir Next', 'Open Sans', sans-serif
 nav.navbar
   height: 125px
   padding: 0
 .navbar-collapse
   background-color: #fff
+  padding: 10px 0
 nav.navbar .navbar-nav
   display: flex
   justify-content: space-between
@@ -102,6 +121,7 @@ nav.navbar .navbar-nav .nav-item
   letter-spacing: 0.1rem
   display: flex
   padding: 0
+  margin: 10px 0
 nav.navbar .navbar-nav .nav-item .nav-link
   padding: 0
   margin: auto
@@ -113,6 +133,9 @@ nav.navbar .navbar-nav .ticket
   width: 140px
   height: 45px
   margin-left: 20px
+  @include max-screen($breakpoint-md)
+    margin-left: auto
+    margin-right: auto
 
 .navbar-light .navbar-nav .ticket>.nav-link
   color: #fff
@@ -142,6 +165,8 @@ footer #langbutton .nav-link
   margin-right: 0
 footer #footer2
   font-size: 14px
+  @include max-screen($breakpoint-md)
+    font-size: 20px
   letter-spacing: 1.5px
 
 footer #footer3
