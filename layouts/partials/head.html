@@ -4,13 +4,14 @@
   {{ .Hugo.Generator }}
   <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}">
   {{ $sass := resources.Get "sass/themebase.sass" }}
-{{ $style := $sass | resources.ToCSS }}
 
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
   <script src="//code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js" charset="utf-8"></script>
   <script src="{{ "js/bootstrap.bundle.min.js" | absURL }}"></script>
+{{ $style := $sass | resources.ToCSS }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
 
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}

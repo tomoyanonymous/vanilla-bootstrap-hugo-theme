@@ -1,11 +1,11 @@
 @import 'original'
-@import 'ui'
 @import 'sp'
 //font
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600')
 $textcolor: #444444
 $buttonblack: #2A2A2A
 $linkblue: #03A9F4
+@import 'ui'
 
 body
   font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3,
@@ -62,8 +62,15 @@ h3
 h4
   font-size: 18px
   letter-spacing: 1.5px
+  font-weight: 600
   @include max-screen($breakpoint-md)
     font-size: 26px
+h5
+  font-size: 16px
+  letter-spacing: 1.5px
+  font-weight: 600
+  @include max-screen($breakpoint-md)
+    font-size: 28px
 #main figure
   max-height: 320px
   padding: 10px
