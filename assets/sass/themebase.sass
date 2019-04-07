@@ -26,14 +26,13 @@ body
   text-decoration: underline
 
 #main
-  max-width: 720px
   padding: 10px
   margin: auto
   font-weight: 200
 #main
   h1,h2,h3,h4,h5
 
-#main h2,#main h3
+#main h2
   text-align: center
 h1
   font-weight: 600
@@ -93,6 +92,11 @@ h4
 #main table td.lecturer
   min-height: 50px
   height: 50px
+
+#main div.container-text
+  max-width: 720px
+  margin: 0 auto
+
 a.titlelogo p
   margin-bottom: 0
   line-height: 1.2em
@@ -111,9 +115,11 @@ nav.navbar
 nav.navbar .navbar-nav
   display: flex
   justify-content: space-between
-  max-width: 650px
+  max-width: 800px
   width: 100%
   padding-left: 15px
+  @include max-screen($breakpoint-md)
+    padding-left: 0px
 
 nav.navbar .navbar-nav .nav-item
   height: 45px
