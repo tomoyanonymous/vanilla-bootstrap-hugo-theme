@@ -15,10 +15,6 @@ body
   letter-spacing: 1.5px
   line-height: 26px
   word-wrap: break-word
-  @include max-screen($breakpoint-md)
-      font-size: 24px
-      letter-spacing: 1.5px
-      line-height: 38px
   color: $textcolor
   box-sizing: border-box
 #main a
@@ -26,7 +22,7 @@ body
   text-decoration: underline
 
 #main
-  padding: 10px
+  padding: 10px 0
   margin: auto
   font-weight: 200
 #main
@@ -41,22 +37,20 @@ h1
   letter-spacing: 0.12px
   line-height: 68px
   @include max-screen($breakpoint-md)
-    font-size: 80px
+    font-size: 58px
     letter-spacing: 0.12px
     line-height: 68px
 h2
   font-weight: 400
   font-size: 28px
   letter-spacing: 5px
-  @include max-screen($breakpoint-md)
-    font-size: 38px
   margin: 50px 0
 h3
   font-weight: 600
   font-size: 20px
   letter-spacing: 1.5px
   @include max-screen($breakpoint-md)
-    font-size: 30px
+    font-size: 26px
   margin: 30px 0
 
 h4
@@ -65,14 +59,14 @@ h4
   font-weight: 600
   margin: 30px 0
   @include max-screen($breakpoint-md)
-    font-size: 26px
+    font-size: 24px
 h5
   font-size: 18px
   letter-spacing: 1.5px
   font-weight: 300
   margin: 30px 0
   @include max-screen($breakpoint-md)
-    font-size: 28px
+    font-size: 26px
 #main figure
   max-height: 320px
   padding: 10px
@@ -106,15 +100,20 @@ h5
   max-width: 720px
   margin: 0 auto
 
-a.titlelogo p
+
+footer .nav, nav.navbar
+  font-weight: 300
+  font-size: 16px
+  @include max-screen($breakpoint-md)
+      font-size: 26px
+nav.navbar a.titlelogo p
   margin-bottom: 0
   line-height: 1.2em
   font-weight: 600
   letter-spacing: 1.5px
-  font-size: 16px
-  @include max-screen($breakpoint-md)
-    font-size: 28px
+
   font-family: 'Avenir Next', 'Open Sans', sans-serif
+
 nav.navbar
   height: 125px
   padding: 0
@@ -163,9 +162,6 @@ nav.navbar .navbar-nav .ticket:hover>.nav-link
     color: $buttonblack
 
 
-footer .nav
-  font-weight: 300
-  font-size: 11pt
 
 footer .nav-link
   padding: 10px 0
@@ -201,3 +197,5 @@ footer #footer3
   font-weight: 200
   width: 140px
   height: 40px
+
+
