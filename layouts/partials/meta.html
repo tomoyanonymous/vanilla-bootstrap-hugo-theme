@@ -1,0 +1,37 @@
+{{$description:= $.Site.Params.description}}
+
+{{if .Description}}
+{{$description = .Description}}
+{{else if .Summary}}
+{{$description = .Summary}}
+{{ end }}
+{{ $title := print .Title " | " .Site.Title }}
+  {{ if .IsHome }}
+    {{ $title = .Site.Title }}
+  {{ end }}
+  <title>{{ $title }}</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="keyword" content="Max,Max/MSP,Maxサマースクール,DSPサマースクール,{{with .Keywords}}{{.}}{{end}}">
+  <meta name="description" content="{{$description}}">
+  <meta http-equiv="content-language" content="{{.Lang}}" />
+  <meta property="og:title" content="{{ $title }}" />
+  <meta property="og:type" content="{{if .IsPage}}article{{else}}website{{end}}">
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:site" content="@MaxSummerSchool">
+  <meta property="twitter:creator" content="@MaxSummerSchool">
+  <meta property="twitter:creator:id" content="@MaxSummerSchool">
+  <meta property="og:url" content="{{.Permalink}}" />
+  <meta property="og:image" content="{{if .Params.ogpimage}}{{.Permalink}}{{.Params.ogpimage}}{{else}}{{$.Site.BaseURL}}{{$.Site.Params.ogpimage}}{{ end }}" />
+  <meta property="twitter:image" content="{{if .Params.ogpimage}}{{.Permalink}}{{.Params.ogpimage}}{{else}}{{$.Site.BaseURL}}{{$.Site.Params.ogpimage}}{{ end }}" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="630" />
+  <meta property="fb:app_id" content="675137692920580" />
+  <meta property="og:description" content="{{$description}}"/>
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="canonical" href="{{.Permalink}}">
+{{with .NextInSection}}<link rel="next" href="{{.}}">{{end}}
+{{with .PrevInSection}}<link rel="prev" href="{{.}}">{{end}}
