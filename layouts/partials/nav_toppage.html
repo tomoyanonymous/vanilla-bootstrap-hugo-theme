@@ -4,7 +4,40 @@
 
     </a>
 
-  {{partial "menu.html" .}}
+    <button class="navbar-toggler order-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+     <div class="collapse navbar-collapse" id="navbarNav">
+       {{$placement := "mx-0 ml-md-auto"}}
+      {{if (.IsHome) }}
+         {{$placement = ""}}
+      {{end}}
+     <ul class="navbar-nav {{$placement}} navbar-nav-home">
+       {{ $showActiveNav := $.Site.Params.showActiveNav }}
+       {{ $currentPage := . }}
+       {{ range .Site.Menus.nav }}
+         {{ $active := "" }}
+         {{ if eq $showActiveNav true }}
+           {{ $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) }}
+           {{ $isMenu = or $isMenu (eq $currentPage.Title .Name) }}
+           {{ $isMenu = or $isMenu (and (eq .Name "Blog") (eq $currentPage.Section "post")) }}
+           {{ $isMenu = or $isMenu (and (eq .Name "Tags") (eq $currentPage.Section "tags")) }}
+           {{ if $isMenu }}
+             {{ $active = "active" }}
+           {{ end }}
+         {{ end }}
+    <li class="nav-item {{$active}}">
+          <a class="nav-link" href="{{.URL|absLangURL}}">{{.Name}}</a>
+        </li>
+    {{end}}
+    <li class="nav-item active ticket ticket-home">
+        <a class="nav-link" href="/ticket">       {{$.Site.Params.ticketLabel}}</a>
+      </li>
+       </ul>
+
+
+       </div>
    </nav>
 
 

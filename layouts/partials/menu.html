@@ -2,8 +2,12 @@
    <span class="navbar-toggler-icon"></span>
  </button>
 
- <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
- <ul class="navbar-nav mx-0 ml-md-auto">
+ <div class="collapse navbar-collapse" id="navbarNav">
+   {{$placement := "mx-0 ml-md-auto"}}
+  {{if (.IsHome) }}
+     {{$placement = ""}}
+  {{end}}
+ <ul class="navbar-nav {{$placement}} ">
    {{ $showActiveNav := $.Site.Params.showActiveNav }}
    {{ $currentPage := . }}
    {{ range .Site.Menus.nav }}

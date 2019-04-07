@@ -106,6 +106,8 @@ footer .nav, nav.navbar
   font-size: 16px
   @include max-screen($breakpoint-md)
       font-size: 26px
+a.titlelogo
+  margin-right: 15px
 nav.navbar a.titlelogo p
   margin-bottom: 0
   line-height: 1.2em
@@ -113,7 +115,8 @@ nav.navbar a.titlelogo p
   letter-spacing: 1.5px
 
   font-family: 'Avenir Next', 'Open Sans', sans-serif
-
+nav.navbar .disabled
+  display: none
 nav.navbar
   height: 125px
   padding: 0
@@ -125,9 +128,10 @@ nav.navbar .navbar-nav
   justify-content: space-between
   max-width: 800px
   width: 100%
-  padding-left: 15px
   @include max-screen($breakpoint-md)
     padding-left: 0px
+nav.navbar .navbar-nav-home
+  justify-content: flex-start
 
 nav.navbar .navbar-nav .nav-item
   height: 45px
@@ -136,6 +140,8 @@ nav.navbar .navbar-nav .nav-item
   display: flex
   padding: 0
   margin: 10px 0
+nav.navbar .navbar-nav-home .nav-item
+  margin-right: 40px
 nav.navbar .navbar-nav .nav-item .nav-link
   padding: 0
   margin: auto
@@ -150,6 +156,9 @@ nav.navbar .navbar-nav .ticket
   @include max-screen($breakpoint-md)
     margin-left: auto
     margin-right: auto
+nav.navbar .navbar-nav-home  .ticket
+  margin-left: auto
+  margin-right: 0
 
 .navbar-light .navbar-nav .ticket>.nav-link
   color: #fff
@@ -161,7 +170,8 @@ nav.navbar .navbar-nav .ticket:hover
 nav.navbar .navbar-nav .ticket:hover>.nav-link
     color: $buttonblack
 
-
+nav.navbar .navbar-nav-home
+  max-width: 100%
 
 footer .nav-link
   padding: 10px 0
@@ -181,6 +191,9 @@ footer #footer2
   letter-spacing: 1.5px
 
 footer #footer3
+
+#home-jumbotron
+  padding: 150px 0
 
 .mailform input ,.mailform textarea
   width: 100%
