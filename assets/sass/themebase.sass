@@ -213,8 +213,20 @@ footer #footer3
   width: 105%
   margin-left: -2.5%
   background-color: $buttonblack
-  color:#fff
+  color: #fff
   text-align: center
   display: flex
   justify-content: center
   align-items: center
+
+.picture
+  margin: 15px 0
+  max-height: 200px
+  max-width: 200px
+  img
+    object-fit: cover
+  @include max-screen($breakpoint-md)
+    max-height: 300px
+    max-width: 100%
+    img
+      object-fit: contain
