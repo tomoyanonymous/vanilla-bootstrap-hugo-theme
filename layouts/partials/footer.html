@@ -35,10 +35,18 @@
 </ul>
 <ul class="nav" id="footer2">
   <li class="nav-item">
-    <a class="nav-link" href="{{"/contact"|absLangURL}}">お問い合わせ</a>
+    {{$ctct := "Contact"}}
+    {{if (eq .Lang "ja")}}
+      {{$ctct = "お問い合わせ"}}
+    {{end}}
+    <a class="nav-link" href="{{"/contact"|absLangURL}}">{{$ctct}}</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{"/faq"|absLangURL}}">よくある質問(FAQ)</a>
+    {{$faq := "FAQ"}}
+    {{if (eq .Lang "ja")}}
+      {{$faq = "よくある質問(FAQ)"}}
+    {{end}}
+    <a class="nav-link" href="{{"/faq"|absLangURL}}">{{$faq}}</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="https://twitter.com/{{.Site.Params.twitter}}" target="_blank">Twitter</a>
