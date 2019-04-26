@@ -17,6 +17,7 @@ body
   word-wrap: break-word
   color: $textcolor
   box-sizing: border-box
+
 #main a
   color: $linkblue
   text-decoration: underline
@@ -207,7 +208,26 @@ footer #footer3
 
 #home-jumbotron
   padding: 150px 0
-
+  z-index: 2
+  h1
+    text-shadow: 2px 2px 3px #fff
+#bg-container
+  padding: 150px 0
+  width: 100%
+  position: absolute
+  left: 0
+  top: 125px
+  overflow-y: hidden
+  h1
+    color: rgba(0,0,0,0)
+img.bg
+  position: absolute
+  object-fit: cover
+  object-position: 50% 50%
+  min-width: 100%
+  min-height: 100%
+  margin-top: -150px
+  z-index: -1
 .mailform input ,.mailform textarea
   width: 100%
   margin: 5px 0
