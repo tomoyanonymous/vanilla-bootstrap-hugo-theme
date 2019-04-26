@@ -1,5 +1,5 @@
 <head prefix="og: http://ogp.me/ns#">
-
+  {{ partial "gtag.html" .}}
   <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}">
   {{ $sass := resources.Get "sass/themebase.sass" }}
 
@@ -15,4 +15,3 @@
   {{ partial "meta.html" . }}
   {{ partial "style.html" . }}
 </head>
-{{ partial "gtag.html" .}}
