@@ -158,6 +158,9 @@ nav.navbar .navbar-nav .nav-item
   margin: 10px 0
 nav.navbar .navbar-nav-home .nav-item
   margin-right: 40px
+  @include max-screen($breakpoint-md)
+    margin-right: inherit
+
 nav.navbar .navbar-nav .nav-item .nav-link
   padding: 0
   margin: auto
@@ -175,6 +178,9 @@ nav.navbar .navbar-nav .ticket
 nav.navbar .navbar-nav-home  .ticket
   margin-left: auto
   margin-right: 0
+  @include max-screen($breakpoint-md)
+    margin-left: auto
+    margin-right: auto
 
 .navbar-light .navbar-nav .ticket>.nav-link
   color: #fff
@@ -188,6 +194,11 @@ nav.navbar .navbar-nav .ticket:hover>.nav-link
 
 nav.navbar .navbar-nav-home
   max-width: 100%
+.navbar-light .navbar-toggler 
+  background: #fff
+  color: rgba(0,0,0,.5)
+  border-color: rgba(0,0,0,.1)
+
 
 footer .nav-link
   padding: 10px 0
@@ -218,6 +229,8 @@ footer #footer3
   left: 0
   top: 125px
   overflow-y: hidden
+  z-index: -1
+
   h1
     color: rgba(0,0,0,0)
 img.bg
